@@ -63,57 +63,71 @@ function NavLinks() {
   );
 }
 
+function FullNav() {
+  return (
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50"
+      initial={{ opacity: 0, y: -80 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -80 }}
+      transition={{ duration: 0.3, ease: EASE_CIN }}
+    >
+      <div className="max-w-[1280px] mx-auto px-10 h-[64px] flex items-center justify-between">
+        <img src="/img/logo-meli-play.svg" alt="Meli Play" style={{ height: 40, width: "auto" }} />
+        <NavLinks />
+        <Avatar border="white" size={36} src="/img/User Avatar.png" alt="User" />
+      </div>
+    </motion.header>
+  );
+}
+
+function PillNav() {
+  return (
+    <motion.div
+      className="fixed left-0 right-0 z-50 flex justify-center"
+      style={{ top: "var(--spacing-sp4)", pointerEvents: "none" }}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.35, ease: EASE_OUT, delay: 0.1 }}
+    >
+      <div
+        className="flex items-center justify-between"
+        style={{
+          maxWidth:             760,
+          width:                "100%",
+          height:               56,
+          margin:               "0 var(--spacing-sp5)",
+          borderRadius:         "var(--radius-full)",
+          background:           "var(--glass-nav-bg)",
+          backdropFilter:       "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+          border:               "1px solid rgba(255,255,255,0.08)",
+          boxShadow:            "0 8px 32px rgba(0,0,0,0.4)",
+          padding:              "0 var(--spacing-sp5)",
+          pointerEvents:        "auto",
+        }}
+      >
+        <img src="/img/logo-meli-play.svg" alt="Meli Play" style={{ height: 32, width: "auto" }} />
+        <NavLinks />
+        <Avatar border="white" size={32} src="/img/User Avatar.png" alt="User" />
+      </div>
+    </motion.div>
+  );
+}
+
 export function Navbar() {
-  const pathname = usePathname();
-  const [scrolled, setScrolled]   = useState(false);
-  const [hovered, setHovered]     = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      style={{
-        background:          scrolled ? "rgba(8,9,10,0.88)" : "transparent",
-        backdropFilter:      scrolled ? "blur(24px)"        : "none",
-        WebkitBackdropFilter:scrolled ? "blur(24px)"        : "none",
-      }}
-    >
-      <div className="max-w-[1280px] mx-auto px-10 h-[64px] flex items-center justify-between">
-        {/* Meli Play logo */}
-        <img src="/img/logo-meli-play.svg" alt="Meli Play" style={{ height: 40, width: "auto" }} />
-
-        {/* Nav links — gap-6 = 24px between items (matches Figma itemSpacing) */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onMouseEnter={() => setHovered(item.label)}
-              onMouseLeave={() => setHovered(null)}
-              className="font-ui text-[16px] font-medium transition-all duration-200"
-              style={{
-                color:          "#f7f8f8",
-                padding:        "12px 16px",
-                ...(pathname === item.href
-                  ? SELECTED_STYLE
-                  : hovered === item.label
-                  ? HOVER_STYLE
-                  : DEFAULT_STYLE),
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        {/* User avatar */}
-        <Avatar border="white" size={36} src="/img/User Avatar.png" alt="User" />
-      </div>
-    </header>
+    <AnimatePresence>
+      {scrolled ? <PillNav key="pill-nav" /> : <FullNav key="full-nav" />}
+    </AnimatePresence>
   );
 }
