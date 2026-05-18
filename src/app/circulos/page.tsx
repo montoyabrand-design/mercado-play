@@ -255,6 +255,8 @@ export default function CirculosPage() {
                 borderBottom: "4px solid transparent",
                 paddingTop: 16,
                 paddingBottom: 12,
+                paddingLeft: "var(--spacing-sp4)",
+                paddingRight: "var(--spacing-sp4)",
               }}
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
