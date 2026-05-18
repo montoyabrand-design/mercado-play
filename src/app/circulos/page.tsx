@@ -18,12 +18,11 @@ const EASE_CIN = [0.25, 0.46, 0.45, 0.94] as const;
 /* ── Data ─────────────────────────────────────────────────────── */
 
 const MEMBERS = [
-  { name: "Sofia Martinez", role: "Admin", avatarImg: "/img/Avatar 2.png", avatarColor: "#686868" },
-  { name: "Tú",             avatarImg: "/img/User Avatar.png",             avatarColor: "#767676" },
-  { name: "Marcos Ruíz",   avatarImg: "/img/Avatar 4.png",                avatarColor: "#686868" },
-  { name: "Carla Luna",    avatarImg: "/img/Avatar 1.png",                 avatarColor: "#686868" },
-  { name: "Ricardo Perez", avatarImg: "/img/Avatar 3.png",                 avatarColor: "#686868" },
-  { name: "Rafael Rossi",  avatarImg: "/img/Avatar 2.png",                 avatarColor: "#686868" },
+  { name: "Sofía", role: "Admin", avatarImg: "/img/Avatar 2.png",  avatarColor: "#686868" },
+  { name: "Tú",                   avatarImg: "/img/User Avatar.png", avatarColor: "#767676" },
+  { name: "Marco",                avatarImg: "/img/Avatar 1.png",  avatarColor: "#686868" },
+  { name: "Ana",                  avatarImg: "/img/Avatar 3.png",  avatarColor: "#686868" },
+  { name: "Luis",                 avatarImg: "/img/Avatar 4.png",  avatarColor: "#686868" },
 ];
 
 const SEEN_IDS = new Set(["r2", "r3", "r5", "r8", "r10"]);
@@ -250,8 +249,10 @@ export default function CirculosPage() {
               className="sticky z-10 flex items-center justify-between"
               style={{
                 top: 64,
-                background: "#08090a",
-                borderBottom: "4px solid #08090a",
+                background: "var(--glass-nav-bg)",
+                backdropFilter: "blur(24px)",
+                WebkitBackdropFilter: "blur(24px)",
+                borderBottom: "4px solid transparent",
                 paddingTop: 16,
                 paddingBottom: 12,
               }}
