@@ -2,7 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { Avatar } from "@/components/ui/Avatar";
+
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+const EASE_CIN = [0.25, 0.46, 0.45, 0.94] as const;
 
 const navItems = [
   { label: "Home",      href: "/"         },
@@ -28,6 +32,36 @@ const DEFAULT_STYLE = {
   borderBottom: "2px solid transparent",
   background:   "transparent",
 };
+
+function NavLinks() {
+  const pathname = usePathname();
+  const [hovered, setHovered] = useState<string | null>(null);
+
+  return (
+    <nav className="hidden md:flex items-center gap-6">
+      {navItems.map((item) => (
+        <a
+          key={item.label}
+          href={item.href}
+          onMouseEnter={() => setHovered(item.label)}
+          onMouseLeave={() => setHovered(null)}
+          className="font-ui text-[16px] font-medium transition-all duration-200"
+          style={{
+            color:   "var(--color-text-secondary)",
+            padding: "12px 16px",
+            ...(pathname === item.href
+              ? SELECTED_STYLE
+              : hovered === item.label
+              ? HOVER_STYLE
+              : DEFAULT_STYLE),
+          }}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  );
+}
 
 export function Navbar() {
   const pathname = usePathname();
