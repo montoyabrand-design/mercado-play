@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { PillTabs } from "@/components/ui/PillTabs";
 
@@ -285,9 +286,20 @@ export default function CompanionPage() {
 
           {/* Nav bar */}
           <div className="shrink-0" style={{ padding: "2px 20px 10px" }}>
-            <p className="font-ui font-medium text-[#f7f8f8]" style={{ fontSize: 14, marginBottom: 6 }}>
-              Viendo en TV
-            </p>
+            <div className="flex items-center gap-2" style={{ marginBottom: 6 }}>
+              <Link
+                href="/"
+                className="flex items-center justify-center rounded-full shrink-0 cursor-pointer"
+                style={{ color: "#f7f8f8", opacity: 0.7, width: 28, height: 28, marginLeft: -4 }}
+              >
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="11 4 6 9 11 14" />
+                </svg>
+              </Link>
+              <p className="font-ui font-medium text-[#f7f8f8]" style={{ fontSize: 14 }}>
+                Viendo en TV
+              </p>
+            </div>
             <div className="flex items-center justify-between">
               <img
                 src="/img/Dune 2.png"
