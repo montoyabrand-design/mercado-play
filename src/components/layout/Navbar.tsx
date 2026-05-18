@@ -85,7 +85,7 @@ function PillNav() {
   return (
     <motion.div
       className="fixed left-0 right-0 z-50 flex justify-center"
-      style={{ top: "var(--spacing-sp4)", pointerEvents: "none" }}
+      style={{ top: "var(--spacing-sp2)", pointerEvents: "none" }}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -98,7 +98,7 @@ function PillNav() {
           width:                "100%",
           height:               56,
           margin:               "0 var(--spacing-sp5)",
-          borderRadius:         "var(--radius-full)",
+          borderRadius:         "var(--radius-md)",
           background:           "var(--glass-nav-bg)",
           backdropFilter:       "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
