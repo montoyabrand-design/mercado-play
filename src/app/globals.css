@@ -70,6 +70,7 @@
   --gradient-scrim-bottom:  linear-gradient(to top, #08090a 0%, transparent 100%);
   --gradient-overlay-dark:  linear-gradient(to bottom, transparent 0%, rgba(8,9,10,0.85) 100%);
   --gradient-vignette:      linear-gradient(to right, #08090a 0%, transparent 60%);
+  --glass-nav-bg:           rgba(8, 9, 10, 0.72);
 }
 
 /* ─── Base ────────────────────────────────────────────────────────── */
