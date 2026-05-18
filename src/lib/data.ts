@@ -59,11 +59,11 @@ export const heroItems: ContentItem[] = [
       "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de garantizar la supervivencia de la humanidad.",
     backdropCss:
       "radial-gradient(ellipse 80% 60% at 65% 40%, #0a1520 0%, #05080f 50%, #08090a 100%)",
-    backdropImg: "/img/Interstellar.png",
+    backdropImg: "/img/interstellar.png",
     titleImg: "/img/interstellar-logo.png",
     posterCss:
       "linear-gradient(160deg, #102035 0%, #06101a 60%, #020508 100%)",
-    posterImg: "/img/Interstellar.png",
+    posterImg: "/img/interstellar.png",
     accentColor: "#60a5fa",
     director: "Christopher Nolan",
     cast: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain", "Michael Caine", "Matt Damon"],
@@ -91,11 +91,11 @@ export const heroItems: ContentItem[] = [
       "El descubrimiento de un secreto sepultado durante mucho tiempo lleva a un joven blade runner a rastrear al antiguo blade runner Rick Deckard.",
     backdropCss:
       "radial-gradient(ellipse 80% 60% at 60% 50%, #3d1f06 0%, #1a0d03 50%, #08090a 100%)",
-    backdropImg: "/img/Blade Runner.png",
+    backdropImg: "/img/blade runner.png",
     titleImg: "/img/blade-runner.png",
     posterCss:
       "linear-gradient(160deg, #7c3a0e 0%, #3d1a05 60%, #100602 100%)",
-    posterImg: "/img/Blade Runner.png",
+    posterImg: "/img/blade runner.png",
     accentColor: "#f97316",
     director: "Denis Villeneuve",
     cast: ["Ryan Gosling", "Harrison Ford", "Ana de Armas", "Sylvia Hoeks", "Robin Wright"],
@@ -123,11 +123,11 @@ export const heroItems: ContentItem[] = [
       "Un adolescente problemático es acosado por visiones de un hombre con un traje de conejo gigante que lo manipula para cometer crímenes.",
     backdropCss:
       "radial-gradient(ellipse 80% 60% at 65% 45%, #0f0a1a 0%, #05080f 50%, #08090a 100%)",
-    backdropImg: "/img/Donnie Darko.png",
+    backdropImg: "/img/donnie darko.png",
     titleImg: "/img/donnie darko logo.png",
     posterCss:
       "linear-gradient(160deg, #1a0f30 0%, #0a0614 60%, #020205 100%)",
-    posterImg: "/img/Donnie Darko.png",
+    posterImg: "/img/donnie darko.png",
     accentColor: "#7c3aed",
     director: "Richard Kelly",
     cast: ["Jake Gyllenhaal", "Jena Malone", "Drew Barrymore", "Mary McDonnell", "Patrick Swayze"],
