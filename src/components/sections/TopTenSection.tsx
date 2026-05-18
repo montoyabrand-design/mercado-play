@@ -28,9 +28,6 @@ export function TopTenSection({ items, title }: TopTenSectionProps) {
         <h2 className="font-display font-bold text-white" style={{ fontSize: 32 }}>
           {title}
         </h2>
-        <button className="font-ui text-[13px] font-medium text-[#767676] hover:text-[#f1c036] transition-colors duration-200 cursor-pointer">
-          Ver todo →
-        </button>
       </motion.div>
 
       <div
